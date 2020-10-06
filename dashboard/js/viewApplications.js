@@ -5,7 +5,7 @@ function onPageLoad(callback) {
         $(".viewApplication").on("click", function(event) {
             event.preventDefault();
             let link = event.target;
-            let applicationNumber = $(link).html();
+            let applicationNumber = $(link).attr("tag");
             getSpecificApplicationDetails(applicationNumber);
         });
         $(".approveButton").on("click", function(event) {
@@ -77,7 +77,7 @@ function getAllApplicationDetails() {
                     }
 
                     let tableRow = `<tr>
-                                    <td><a href='' class='viewApplication'>` + applicationNumber + `</a></td>
+                                    <td><a href='' class='viewApplication' tag=" ` + applicationNumber + `">` + applicationNumber + `</a></td>
                                     <td>` + appliedOn + `</td>
                                     <td>` + applicantName + `</td>
                                     <td>` + applicantEmailID + `</td>
